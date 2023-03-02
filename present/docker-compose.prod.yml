@@ -15,8 +15,8 @@ services:
     depends_on:
       - db
     build:
-      context: ./
-      dockerfile: ./api/Dockerfile.prod
+      context: ./api
+      dockerfile: Dockerfile.prod
     environment:
       - NODE_ENV=$API_NODE_ENV
       - PORT=$API_PORT
@@ -31,8 +31,8 @@ services:
       - /app/node_modules
   ui_build:
     build:
-      context: ./
-      dockerfile: ./ui/Dockerfile.prod
+      context: ./ui
+      dockerfile: Dockerfile.prod
     environment:
       - NODE_ENV
       - REACT_APP_API_HOST
